@@ -1,0 +1,379 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.8rem;
+  width: 100%;
+  background-color: black;
+}
+.navbar i {
+  display: none;
+  color: black;
+}
+.navbar .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
+}
+.navbar .nav-container .nav-title {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  width: 20%;
+}
+.navbar .nav-container .nav-title img {
+  height: 50px;
+  width: 60px;
+}
+.navbar .nav-container .nav-title h1 {
+  font-size: 2.2rem;
+  color: white;
+}
+.navbar .nav-container ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 80%;
+}
+.navbar .nav-container ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+  color: white;
+  list-style: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  padding: 1rem;
+}
+
+.LinkedList {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 1300px;
+  padding: 1rem;
+}
+.LinkedList a {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  height: 30px;
+  width: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  margin: 1rem 0 0 1rem;
+  transition: all 0.2s ease-in-out;
+}
+.LinkedList a i {
+  font-size: 20px;
+}
+.LinkedList a:hover {
+  background-color: white;
+  color: black;
+}
+.LinkedList #cellContainer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(7, minmax(100px, 1fr));
+  transition: all 0.3s ease;
+}
+.LinkedList #cellContainer .node {
+  display: flex;
+  height: 50px;
+  width: 120px;
+  margin: 4rem 0;
+  transition: all 0.3s ease;
+  animation: flow 0.3s ease;
+}
+.LinkedList #cellContainer .node .data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 60%;
+  font-size: 1rem;
+  color: white;
+  border: 1px solid black;
+  transition: all 0.3s ease;
+  background-color: palevioletred;
+}
+.LinkedList #cellContainer .node .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 40%;
+  border: 1px solid black;
+}
+.LinkedList #cellContainer .node .link .point {
+  height: 7px;
+  width: 7px;
+  background-color: black;
+  border-radius: 50%;
+}
+.LinkedList #cellContainer .nodeDL {
+  display: flex;
+  height: 50px;
+  width: 120px;
+  margin: 2rem 0;
+  transition: all 0.3s ease;
+  animation: flow 0.3s ease;
+}
+.LinkedList #cellContainer .nodeDL .dataDL {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 60%;
+  font-size: 1rem;
+  color: white;
+  border: 1px solid black;
+  transition: all 0.3s ease;
+  background-color: palevioletred;
+}
+.LinkedList #cellContainer .nodeDL .linkDL {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 20%;
+  border: 1px solid black;
+}
+.LinkedList #cellContainer .nodeDL .linkDL .pointF {
+  display: flex;
+  align-self: flex-start;
+  margin-top: 1rem;
+  height: 7px;
+  width: 7px;
+  background-color: black;
+  border-radius: 50%;
+}
+.LinkedList #cellContainer .nodeDL .linkDL .pointB {
+  display: flex;
+  align-self: flex-end;
+  margin-bottom: 1rem;
+  height: 7px;
+  width: 7px;
+  background-color: black;
+  border-radius: 50%;
+}
+.LinkedList #svgContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+.LinkedList .btn-container button {
+  cursor: pointer;
+  padding: 0.8rem 2.5rem;
+  background: black;
+  transition: 0.25s ease-in-out;
+  border: 2px solid black;
+  border-radius: 0.2rem;
+  color: white;
+  font-size: 0.9rem;
+}
+.LinkedList .btn-container button:hover {
+  background: white;
+  color: black;
+}
+
+input[type=number] {
+  font-size: 1rem;
+  text-align: center;
+  height: 40px;
+  width: 60px;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@keyframes flow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes Finish {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes scaleDown {
+  from {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+/* ---------------------------------------------------- MEDIA QUERIES --------------------------------------------------------------- */
+@media (max-width: 1300px) {
+  .navbar .nav-container .nav-title {
+    gap: 1rem;
+  }
+  .navbar .nav-container .nav-title h1 {
+    font-size: 1.8rem;
+  }
+  .navbar .nav-container .nav-title img {
+    height: 40px;
+    width: 55px;
+  }
+}
+@media (max-width: 1100px) {
+  .navbar .nav-container .nav-title {
+    width: 25%;
+    gap: 1rem;
+  }
+  .navbar .nav-container .nav-title h1 {
+    font-size: 1.8rem;
+  }
+  .navbar .nav-container .nav-title img {
+    height: 40px;
+    width: 55px;
+  }
+  .navbar .nav-container ul {
+    width: 75%;
+  }
+}
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  .navbar i {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    margin-top: 2.5rem;
+    cursor: pointer;
+  }
+  .navbar .nav-container {
+    display: flex;
+    justify-content: start;
+  }
+  .navbar .nav-container .nav-title {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1.5rem;
+    width: 30%;
+  }
+  .navbar .nav-container .nav-title h1 {
+    font-size: 2.5rem;
+    color: white;
+  }
+  .navbar .nav-container .nav-title img {
+    height: 50px;
+    width: 65px;
+  }
+  .navbar .nav-container ul {
+    display: none;
+  }
+  .navbar .nav-container ul li {
+    width: 50%;
+  }
+  .navbar .nav-container .ULColumn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .Column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .anim {
+    animation: scaleDown 0.3s ease;
+    transition: all 0.3s ease;
+  }
+}
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.5rem 2rem;
+  }
+  .navbar i {
+    font-size: 1.9rem;
+    color: white;
+    margin-top: 2.5rem;
+  }
+  .navbar .nav-container .nav-title {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+  }
+}
+@media (max-width: 500px) {
+  .navbar .nav-container .nav-title {
+    width: 70%;
+  }
+  .navbar .nav-container ul li {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .navbar .nav-container .nav-title {
+    width: 100%;
+  }
+  .navbar .nav-container .nav-title h1 {
+    font-size: 2.5rem;
+  }
+  .navbar .nav-container .nav-option ul {
+    display: none;
+  }
+}
+@media (max-width: 360px) {
+  .navbar i {
+    margin-top: 2.3rem;
+  }
+  .navbar .nav-container .nav-title img {
+    height: 40px;
+    width: 50px;
+  }
+  .navbar .nav-container .nav-title h1 {
+    font-size: 2.4rem;
+  }
+  .navbar .nav-container .nav-option ul {
+    display: none;
+  }
+}/*# sourceMappingURL=LinkedList.css.map */

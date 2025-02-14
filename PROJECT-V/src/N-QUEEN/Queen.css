@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 1rem;
+  overflow: hidden;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.8rem;
+  width: 100%;
+  background-color: black;
+}
+.navbar i {
+  display: none;
+  color: black;
+}
+.navbar .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
+}
+.navbar .nav-container .nav-title {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  width: 20%;
+}
+.navbar .nav-container .nav-title img {
+  height: 60px;
+  width: 60px;
+}
+.navbar .nav-container .nav-title h1 {
+  font-size: 2.2rem;
+  color: white;
+}
+.navbar .nav-container ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 80%;
+}
+.navbar .nav-container ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+  color: white;
+  list-style: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 1rem;
+}
+main .nqueen {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+}
+main .nqueen a {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  height: 30px;
+  width: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  margin: 1rem 0 0 0;
+  transition: all 0.2s ease-in-out;
+}
+main .nqueen a i {
+  font-size: 20px;
+}
+main .nqueen a:hover {
+  background-color: white;
+  color: black;
+}
+main .nqueen #board {
+  display: grid;
+  background-color: white;
+  margin: auto;
+}
+main .nqueen #board .cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border: 1px solid #ddd;
+}
+main .nqueen #board .white {
+  background-color: white;
+}
+main .nqueen #board .green {
+  background-color: green;
+}
+main .nqueen .btn-container {
+  width: 50%;
+}
+main .nqueen .btn-container .btn button {
+  height: 40px;
+  width: 100px;
+  background: black;
+  transition: 0.25s ease-in-out;
+  border: 2px solid black;
+  border-radius: 2px;
+  color: white;
+  font-size: 15px;
+  margin: 20px 20px 0 0;
+}
+main .nqueen .btn-container .btn button:hover {
+  background: white;
+  color: black;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 40%;
+  margin: 0 20px 40px 10px;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: #ddd;
+  border-radius: 1.3px;
+  box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
+}
+
+input[type=range]#Speed::-webkit-slider-thumb {
+  border: none;
+  height: 66px;
+  width: 66px;
+  background: url("/Photos/thumb.png") no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -28px;
+}
+
+input[type=range]#Size::-webkit-slider-thumb {
+  border: none;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: slateblue;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8px;
+}
+
+input[type=range] focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+/* ---------------------------------------------------- MEDIA QUERIES --------------------------------------------------------------- */
+@media (max-width: 1300px) {
+  .navbar .nav-container .nav-title {
+    gap: 1rem;
+  }
+  .navbar .nav-container .nav-title h1 {
+    font-size: 1.8rem;
+  }
+  .navbar .nav-container .nav-title img {
+    height: 40px;
+    width: 55px;
+  }
+}
+@media (max-width: 1100px) {
+  .navbar .nav-container .nav-title {
+    width: 25%;
+    gap: 1rem;
+  }
+  .navbar .nav-container .nav-title h1 {
+    font-size: 1.8rem;
+  }
+  .navbar .nav-container .nav-title img {
+    height: 40px;
+    width: 55px;
+  }
+  .navbar .nav-container ul {
+    width: 75%;
+  }
+}
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  .navbar i {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    margin-top: 2.3rem;
+    cursor: pointer;
+  }
+  .navbar .nav-container {
+    display: flex;
+    justify-content: start;
+  }
+  .navbar .nav-container .nav-title {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1.5rem;
+    width: 30%;
+  }
+  .navbar .nav-container .nav-title h1 {
+    font-size: 2.5rem;
+    color: white;
+  }
+  .navbar .nav-container .nav-title img {
+    height: 50px;
+    width: 65px;
+  }
+  .navbar .nav-container ul {
+    display: none;
+  }
+  .navbar .nav-container ul li {
+    width: 50%;
+  }
+  .navbar .nav-container .ULColumn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .Column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .anim {
+    animation: scaleDown 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  main .nqueen {
+    padding: 4rem;
+    gap: 5rem;
+    flex-direction: column;
+  }
+  main .nqueen .btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  main .nqueen .btn-container label {
+    display: grid;
+    place-items: center;
+    width: 80%;
+  }
+  main .nqueen .btn-container input[type=range] {
+    width: 50%;
+  }
+}
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.5rem 2rem;
+  }
+  .navbar i {
+    font-size: 1.9rem;
+    color: white;
+    margin-top: 2.2rem;
+  }
+  .navbar .nav-container .nav-title {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+  }
+}
+@media (max-width: 500px) {
+  .navbar .nav-container ul li {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .navbar .nav-container .nav-title {
+    width: 100%;
+  }
+  .navbar .nav-container .nav-title h1 {
+    font-size: 2.5rem;
+  }
+  .navbar .nav-container .nav-option ul {
+    display: none;
+  }
+}
+@media (max-width: 360px) {
+  .navbar i {
+    margin-top: 2.3rem;
+  }
+  .navbar .nav-container .nav-title img {
+    height: 40px;
+    width: 50px;
+  }
+  .navbar .nav-container .nav-title h1 {
+    font-size: 2.4rem;
+  }
+  .navbar .nav-container .nav-option ul {
+    display: none;
+  }
+}/*# sourceMappingURL=Queen.css.map */

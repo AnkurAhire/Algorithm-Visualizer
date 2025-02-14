@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/LinkedList/LinkedList.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/43249bbc2d.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <i class="fa fa-bars menu-icon" onclick="toggleMenu()"></i>
+
+      <div class="nav-container">
+        <div class="nav-title">
+          <img src="/Photos/chain.png" alt="" srcset="" />
+          <h1>.LinkedList</h1>
+        </div>
+
+        <ul>
+          <li
+            data-algo="SingleLinkedList"
+            onclick="HandleEvent(this.dataset.algo)"
+          >
+            1-LinkedList
+          </li>
+          <li
+            data-algo="DoublyLinkedList"
+            onclick="HandleEvent(this.dataset.algo)"
+          >
+            2-LinkedList
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main id="main">
+      <div class="LinkedList">
+        <a href="/src/home/home.html"><i class="fa fa-arrow-left"></i></a>
+        <div id="cellContainer"></div>
+        <svg id="svgContainer"></svg>
+        <div class="btn-container">
+          <label for="InputNumber"
+            >Enter Data : <input type="number" name="InputNumber"
+            id="InputNumber"/ onkeypress="Handlekey(event)" /></label
+          >
+          <label for="SearchNumber"
+            >Enter Number To Search :
+            <input
+              type="number"
+              name="SearchNumber"
+              id="SearchNumber"
+              onkeypress="HandleNum(event)"
+          /></label>
+        </div>
+      </div>
+    </main>
+    <script src="/src/LinkedList/LinkedList.js"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/Searching/Searching.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/43249bbc2d.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <i class="fa fa-bars menu-icon" onclick="toggleMenu()"></i>
+
+      <div class="nav-container">
+        <div class="nav-title">
+          <img src="/Photos/Searching.png" alt="" srcset="" />
+          <h1>.Searching</h1>
+        </div>
+
+        <ul>
+          <li data-algo="LinearSearch" onclick="HandleEvent(this.dataset.algo)">
+            LinearSearch
+          </li>
+          <li data-algo="BinarySearch" onclick="HandleEvent(this.dataset.algo)">
+            BinarySearch
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="Searching">
+        <a href="/src/home/home.html"><i class="fa fa-arrow-left"></i></a>
+        <div class="container">
+          <div class="cellContainer"></div>
+          <div class="btn-container">
+            <button id="Run-btn" onclick="">RUN</button>
+            <label for="InputNumber"
+              >Enter Number :
+              <input
+                type="number"
+                name="InputNumber"
+                id="InputNumber"
+                onkeypress="HandleKey(event)"
+            /></label>
+            <p>Number To Search : <span id="numLabel"></span></p>
+            <p>Status : <span id="Status"> None</span></p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/src/Searching/Searching.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+a {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  height: 30px;
+  width: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  margin: 1rem 0 0 1rem;
+  transition: all 0.2s ease-in-out;
+  margin-left: 5rem;
+  margin-top: 2rem;
+}
+a i {
+  font-size: 20px;
+}
+
+a:hover {
+  background-color: white;
+  color: black;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+}/*# sourceMappingURL=ML.css.map */

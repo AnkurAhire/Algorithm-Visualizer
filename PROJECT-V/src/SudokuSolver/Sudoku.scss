@@ -1,0 +1,393 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 1rem;
+  overflow: hidden;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.8rem;
+  width: 100%;
+  background-color: black;
+
+  i {
+    display: none;
+    color: black;
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: flex-start;
+    width: 90%;
+    gap: 1rem;
+
+    img {
+      height: 50px;
+      width: 70px;
+    }
+
+    h1 {
+      margin: auto 0;
+      font-size: 2.2rem;
+      color: white;
+    }
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  padding: 1rem;
+}
+
+.SudkoSolver {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+
+  a {
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 30px;
+    width: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    margin: 1rem 0 0 1rem;
+    transition: all 0.2s ease-in-out;
+
+    i {
+      font-size: 20px;
+    }
+  }
+
+  a:hover {
+    background-color: white;
+    color: black;
+  }
+
+  #board {
+    display: grid;
+    height: 450px;
+    width: 450px;
+    grid-template-rows: repeat(9, 50px);
+    grid-template-columns: repeat(9, 50px);
+    background-color: #ddd;
+    margin: auto;
+    .cell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 50px;
+      border: 1px solid #2a49c8;
+      font-size: 20px;
+      background-color: rgb(193, 238, 253);
+      color: black;
+      transition: all 0.3s ease;
+    }
+    .white {
+      background-color: white;
+    }
+
+    .current {
+      color: white;
+      background-color: #c82a67;
+      animation: flow 0.3s ease;
+    }
+  }
+
+  .btn-pannel {
+    width: 40%;
+    margin: auto;
+    .btn-container {
+      p {
+        margin: 1rem 0;
+      }
+
+      button {
+        height: 40px;
+        width: 100px;
+        background: black;
+        transition: 0.25s ease-in-out;
+        border: 2px solid black;
+        border-radius: 2px;
+        color: white;
+        font-size: 15px;
+        margin: 20px 20px 0 0;
+      }
+
+      button:hover {
+        background: white;
+        color: black;
+      }
+    }
+  }
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 50%;
+  margin: 0 20px 40px 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  transform: rotate(180deg);
+  background: linear-gradient(to right, white 50%, red 50%);
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="text"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  border: none;
+  border-radius: 1.3px;
+}
+
+input[type="range"]#Speed::-webkit-slider-thumb {
+  border: none;
+  height: 66px;
+  width: 66px;
+  background: url("/Photos/thumb.png") no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -28px;
+  transform: rotate(180deg);
+}
+
+input[type="range"]focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+
+input[type="text"] {
+  font-size: 1rem;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  border: none;
+  caret-color: #7994ff;
+  background: #c82a67;
+}
+
+@keyframes flow {
+  from {
+    transform: scale(0);
+  }
+  50% {
+    border-radius: 50%;
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+/* ---------------------------------------------------- MEDIA QUERIES --------------------------------------------------------------- */
+
+@media (max-width: 1300px) {
+  .navbar {
+    .nav-container {
+      .nav-title {
+        gap: 1rem;
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        img {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .navbar {
+    .nav-container {
+      .nav-title {
+        width: 25%;
+        gap: 1rem;
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        img {
+        }
+      }
+
+      ul {
+        width: 75%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+
+    .nav-container {
+      display: flex;
+
+      h1 {
+        font-size: 2.5rem;
+        color: white;
+      }
+
+      img {
+        height: 50px;
+        width: 65px;
+      }
+    }
+  }
+
+  main {
+    .SudkoSolver {
+      flex-direction: column;
+      padding: 3rem 0;
+      gap: 4rem;
+
+      .btn-pannel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+
+    .nav-container {
+      display: flex;
+
+      h1 {
+        font-size: 2.2rem;
+        color: white;
+      }
+      img {
+        height: 40px;
+        width: 50px;
+      }
+    }
+  }
+  main {
+    .SudkoSolver {
+      display: flex;
+      justify-content: center;
+      #board {
+        height: 350px;
+        width: 350px;
+        margin: 0 auto;
+
+        grid-template-rows: repeat(9, 40px);
+        grid-template-columns: repeat(9, 40px);
+
+        .cell {
+          height: 40px;
+          width: 40px;
+        }
+      }
+      .btn-pannel {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar {
+    .nav-container {
+      width: 100%;
+      h1 {
+      }
+    }
+  }
+
+  main {
+    padding: 0;
+
+    .SudkoSolver {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      #board {
+        height: 300px;
+        width: 300px;
+        margin: 0;
+
+        grid-template-rows: repeat(9, 35px);
+        grid-template-columns: repeat(9, 35px);
+
+        .cell {
+          height: 35px;
+          width: 35px;
+        }
+      }
+      .btn-pannel {
+        margin: 0;
+        .btn-container {
+          button {
+          }
+          input[type="range"] {
+            -webkit-appearance: none;
+            width: 50%;
+            margin: 0 0 40px 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar {
+    .nav-container {
+      img {
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+    }
+  }
+}

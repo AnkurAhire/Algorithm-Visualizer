@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 1rem;
+}
+
+.navbar {
+  padding: 1rem;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.main-section {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 1rem;
+
+  .main-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    padding: 1rem;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1200px;
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 1rem;
+      background-color: #4158d0;
+      background-image: linear-gradient(
+        43deg,
+        #4158d0 0%,
+        #c850c0 46%,
+        #ffcc70 100%
+      );
+
+      .box-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        img {
+          max-width: 80%;
+          height: auto;
+          transform: scale(0.85);
+        }
+
+        h2 {
+          margin: auto 0;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .main-section {
+    .main-container {
+      grid-template-columns: repeat(2, minmax(150px, 1fr));
+
+      .box {
+        .box-container {
+          h2 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    font-size: 0.9rem;
+  }
+
+  .box {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    font-size: 0.5rem;
+  }
+
+  .box {
+    padding: 0.25rem;
+  }
+
+  .main-section {
+    .main-container {
+      grid-template-columns: repeat(1, minmax(150px, 1fr));
+
+      .box {
+        .box-container {
+          h2 {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .main-section {
+    .main-container {
+      grid-template-columns: repeat(1, minmax(150px, 1fr));
+    }
+  }
+}

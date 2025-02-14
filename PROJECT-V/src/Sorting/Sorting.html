@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/Sorting/Sorting.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/43249bbc2d.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <i class="fa fa-bars menu-icon" onclick="toggleMenu()"></i>
+
+      <div class="nav-container">
+        <div class="nav-title">
+          <img src="/Photos/SortingIcon.png" alt="Sorting Icon" />
+          <h1>.Sorting</h1>
+        </div>
+
+        <ul>
+          <li
+            data-algo="SelectionSort"
+            onclick="HandleEvent(this.dataset.algo)"
+          >
+            SelectionSort
+          </li>
+          <li data-algo="BubbleSort" onclick="HandleEvent(this.dataset.algo)">
+            BubbleSort
+          </li>
+          <li
+            data-algo="InsertionSort"
+            onclick="HandleEvent(this.dataset.algo)"
+          >
+            InsertionSort
+          </li>
+          <li data-algo="MergeSort" onclick="HandleEvent(this.dataset.algo)">
+            MergeSort
+          </li>
+          <li data-algo="QuickSort" onclick="HandleEvent(this.dataset.algo)">
+            QuickSort
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="Sorting">
+        <a href="/src/home/home.html"><i class="fa fa-arrow-left"></i></a>
+
+        <div class="Container">
+          <div id="cellContainer"></div>
+        </div>
+
+        <div class="btn-container">
+          <button id="Run-btn" onclick="">Run</button>
+          <button id="Shuffle-btn" onclick="Shuffle()">Shuffle</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="/src/Sorting/Sorting.js"></script>
+  </body>
+</html>

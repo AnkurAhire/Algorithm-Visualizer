@@ -1,0 +1,397 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 1rem;
+  overflow: hidden;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.8rem;
+  width: 100%;
+  background-color: black;
+}
+.navbar i {
+  display: none;
+  color: black;
+}
+.navbar .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
+}
+.navbar .nav-container .nav-title {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  width: 20%;
+}
+.navbar .nav-container .nav-title img {
+  height: 80px;
+  width: 80px;
+}
+.navbar .nav-container .nav-title h1 {
+  font-size: 2.2rem;
+  color: white;
+}
+.navbar .nav-container ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 80%;
+}
+.navbar .nav-container ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+  color: white;
+  list-style: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .Searching {
+  width: 100%;
+  max-width: 1300px;
+}
+main .Searching a {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  height: 30px;
+  width: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  margin: 1rem 0 0 1rem;
+  transition: all 0.2s ease-in-out;
+}
+main .Searching a i {
+  font-size: 20px;
+}
+main .Searching a:hover {
+  background-color: white;
+  color: black;
+}
+main .Searching .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+main .Searching .container .arrow-ConatainerUp {
+  width: 100%;
+  position: relative;
+}
+main .Searching .container .arrow-ConatainerUp #arrowI {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+main .Searching .container .arrow-ConatainerUp #arrowI span {
+  position: absolute;
+  bottom: 40px;
+  text-align: end;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+main .Searching .container .arrow-ConatainerUp #arrowJ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+main .Searching .container .arrow-ConatainerUp #arrowJ span {
+  position: absolute;
+  bottom: 40px;
+  text-align: end;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+main .Searching .container .arrow-ConatainerUp #arrowK {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+main .Searching .container .arrow-ConatainerUp #arrowK span {
+  position: absolute;
+  bottom: 40px;
+  text-align: end;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+main .Searching .container .cellContainer {
+  display: flex;
+  width: 100%;
+  margin: 3rem 0 8rem 0;
+  justify-content: space-evenly;
+}
+main .Searching .container .cellContainer .cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  color: white;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  background-color: rgb(84, 84, 230);
+}
+main .Searching .container .cellContainer .current {
+  background-color: red;
+}
+main .Searching .container .cellContainer .Found {
+  background-color: lightgreen;
+}
+main .Searching .container .btn-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+}
+main .Searching .container .btn-container button {
+  cursor: pointer;
+  padding: 0.8rem 2.5rem;
+  background: black;
+  transition: 0.25s ease-in-out;
+  border: 2px solid black;
+  border-radius: 0.2rem;
+  color: white;
+  font-size: 0.9rem;
+}
+main .Searching .container .btn-container button:hover {
+  background: white;
+  color: black;
+}
+main .Searching .container .btn-container p span {
+  transition: all 0.3s ease-in-out;
+}
+
+input[type=number] {
+  font-size: 1rem;
+  text-align: center;
+  height: 40px;
+  width: 60px;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+/* ---------------------------------------------------- MEDIA QUERIES --------------------------------------------------------------- */
+@media (max-width: 1300px) {
+  .navbar .nav-container .nav-title {
+    gap: 1rem;
+  }
+  .navbar .nav-container .nav-title h1 {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 1100px) {
+  .navbar .nav-container .nav-title {
+    width: 25%;
+    gap: 1rem;
+  }
+  .navbar .nav-container .nav-title h1 {
+    font-size: 1.8rem;
+  }
+  .navbar .nav-container ul {
+    width: 75%;
+  }
+}
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  .navbar i {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    margin-top: 3.2rem;
+    cursor: pointer;
+  }
+  .navbar .nav-container {
+    display: flex;
+    justify-content: start;
+  }
+  .navbar .nav-container .nav-title {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1.5rem;
+    width: 30%;
+  }
+  .navbar .nav-container .nav-title h1 {
+    font-size: 2.5rem;
+    color: white;
+  }
+  .navbar .nav-container ul {
+    display: none;
+  }
+  .navbar .nav-container ul li {
+    width: 50%;
+  }
+  .navbar .nav-container .ULColumn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .Column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .anim {
+    animation: scaleDown 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  main .Searching .container .btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.5rem 2rem;
+  }
+  .navbar i {
+    font-size: 1.9rem;
+    color: white;
+  }
+  .navbar .nav-container .nav-title {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+  }
+  main .Searching .container {
+    padding: 0.8rem;
+  }
+  main .Searching .container .cellContainer .cell {
+    height: 50px;
+    width: 50px;
+  }
+}
+@media (max-width: 500px) {
+  .navbar .nav-container .nav-title {
+    width: 100%;
+  }
+  .navbar .nav-container ul li {
+    width: 100%;
+  }
+  main .Searching .container {
+    padding: 0.5rem;
+  }
+  main .Searching .container .cellContainer {
+    margin-bottom: 7rem;
+  }
+  main .Searching .container .cellContainer .cell {
+    height: 45px;
+    width: 45px;
+  }
+  main .Searching .container .btn-container {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 400px) {
+  .navbar {
+    padding: 0.6rem;
+  }
+  .navbar .nav-container .nav-title {
+    width: 100%;
+  }
+  .navbar .nav-container .nav-title h1 {
+    font-size: 2.3rem;
+  }
+  .navbar .nav-container .nav-option ul {
+    display: none;
+  }
+  main .Searching .container {
+    padding: 0.5rem;
+  }
+  main .Searching .container .cellContainer {
+    margin-bottom: 6rem;
+  }
+  main .Searching .container .cellContainer .cell {
+    height: 40px;
+    width: 40px;
+  }
+  main .Searching .container .btn-container {
+    font-size: 0.8rem;
+  }
+  main .Searching .container .btn-container button {
+    padding: 0.7rem 2.3rem;
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 360px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+  .navbar i {
+    font-size: 1.8rem;
+    margin-top: 2.5rem;
+  }
+  .navbar .nav-container .nav-title h1 {
+    font-size: 2rem;
+  }
+  .navbar .nav-container .nav-title img {
+    height: 60px;
+    width: 60px;
+  }
+  .navbar .nav-container .nav-option ul {
+    display: none;
+  }
+}/*# sourceMappingURL=Searching.css.map */

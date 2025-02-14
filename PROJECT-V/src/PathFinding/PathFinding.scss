@@ -1,0 +1,597 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 1rem;
+  overflow: hidden;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.8rem;
+  width: 100%;
+  background-color: black;
+
+  i {
+    display: none;
+    color: black;
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+
+    .nav-title {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      width: 20%;
+
+      img {
+        height: 55px;
+        width: 70px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        color: white;
+      }
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      height: 100%;
+      width: 80%;
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 150px;
+        border-radius: 5px;
+        color: white;
+        list-style: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.PathFinder {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 1400px;
+  padding: 1rem;
+
+  a {
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 30px;
+    width: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    margin: 1rem 0 0 0;
+
+    transition: all 0.2s ease-in-out;
+
+    i {
+      font-size: 20px;
+    }
+  }
+
+  a:hover {
+    background-color: white;
+    color: black;
+  }
+
+  #grid {
+    display: grid;
+    height: 600px;
+    width: 600px;
+    margin: auto;
+
+    .cell {
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border: 1px solid skyblue;
+    }
+
+    .start {
+      background-color: blue;
+      color: white;
+      font-size: 17px;
+      text-align: center;
+    }
+
+    .goal {
+      background-color: green;
+      color: white;
+      font-size: 17px;
+      text-align: center;
+    }
+
+    .wall {
+      background-color: black;
+    }
+
+    .explored {
+      background-color: blueviolet;
+      animation: ExploreColor 0.5s ease;
+      transition: all 0.5s ease;
+    }
+
+    .path {
+      text-align: center;
+      background-color: palegreen;
+      animation: PathColor 0.5s ease;
+      transition: all 0.5s ease;
+    }
+  }
+
+  .btn-pannel {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 3.125rem;
+      margin: 0 0 7.5rem 0;
+      background-color: #4158d0;
+      background-image: linear-gradient(
+        43deg,
+        #4158d0 0%,
+        #c850c0 46%,
+        #ffcc70 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .btn-container {
+      width: 100%;
+
+      button {
+        padding: 0.8rem 2.5rem;
+        background: black;
+        transition: 0.25s ease-in-out;
+        border: 2px solid black;
+        border-radius: 0.2rem;
+        color: white;
+        font-size: 0.9rem;
+        margin: 1.2rem 1.2rem 0 0;
+      }
+
+      button:hover {
+        background: white;
+        color: black;
+      }
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  .navbar {
+    .nav-container {
+      .nav-title {
+        gap: 1rem;
+
+        h1 {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+
+  main {
+    padding: 0.8rem;
+
+    .PathFinder {
+      padding: 0.6rem;
+      max-width: 1200px;
+
+      #grid {
+        height: 500px;
+        width: 500px;
+      }
+
+      .btn-pannel {
+        padding: 1.8rem;
+
+        h1 {
+          font-size: 2.8rem;
+          margin: 0 0 7rem 0;
+        }
+        .btn-container {
+          button {
+            padding: 0.6rem 2.2rem;
+            font-size: 0.7rem;
+            margin: 1.1rem 1.1rem 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .navbar {
+    .nav-container {
+      .nav-title {
+        width: 25%;
+        gap: 1rem;
+
+        h1 {
+          font-size: 1.8rem;
+        }
+      }
+
+      ul {
+        width: 75%;
+      }
+    }
+  }
+  main {
+    padding: 0.6rem;
+
+    .PathFinder {
+      padding: 0;
+      max-width: 1000px;
+
+      .btn-pannel {
+        padding: 1rem;
+
+        h1 {
+          font-size: 2.6rem;
+          margin: 0 0 5rem 0;
+        }
+        .btn-container {
+          button {
+            padding: 0.6rem 2.2rem;
+            font-size: 0.7rem;
+            margin: 1.1rem 1.1rem 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+
+    i {
+      display: block;
+      font-size: 2rem;
+      color: white;
+      margin-top: 2.5rem;
+      cursor: pointer;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: start;
+
+      .nav-title {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 1.5rem;
+        width: 30%;
+
+        h1 {
+          font-size: 2.5rem;
+          color: white;
+        }
+      }
+
+      ul {
+        display: none;
+
+        li {
+          width: 50%;
+        }
+      }
+
+      .ULColumn {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .Column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .anim {
+    animation: scaleDown 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  main {
+    .PathFinder {
+      display: flex;
+      flex-direction: column;
+
+      #grid {
+        margin: 2rem 0 2rem 0;
+        height: 400px;
+        width: 400px;
+      }
+      .btn-pannel {
+        padding: 0;
+
+        h1 {
+          text-align: center;
+          font-size: 3rem;
+        }
+        .btn-container {
+          button {
+            padding: 0.6rem 2.2rem;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.5rem 2rem;
+
+    i {
+      font-size: 1.9rem;
+      color: white;
+      margin-top: 2.5rem;
+    }
+
+    .nav-container {
+      .nav-title {
+        display: flex;
+        justify-content: center;
+        width: 70%;
+      }
+    }
+  }
+
+  main {
+    .PathFinder {
+      display: flex;
+      flex-direction: column;
+
+      #grid {
+        margin: 2rem 0 2rem 0;
+        height: 350px;
+        width: 350px;
+      }
+      .btn-pannel {
+        padding: 0.5rem;
+
+        h1 {
+          text-align: center;
+          font-size: 2.4rem;
+          margin: 0 0 4rem 0;
+        }
+        .btn-container {
+          button {
+            padding: 0.6rem 2.2rem;
+            font-size: 0.8rem;
+            margin: 1em 1rem 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 0.7rem;
+    .nav-container {
+      .nav-title {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar {
+    .nav-container {
+      .nav-title {
+        width: 100%;
+
+        h1 {
+          font-size: 2.1rem;
+        }
+
+        img {
+          height: 50px;
+          width: 60px;
+        }
+      }
+
+      .nav-option {
+        ul {
+          display: none;
+        }
+      }
+    }
+  }
+
+  main {
+    .PathFinder {
+      display: flex;
+      flex-direction: column;
+
+      #grid {
+        margin: 2rem 0 2rem 0;
+        height: 300px;
+        width: 300px;
+      }
+      .btn-pannel {
+        padding: 0;
+
+        h1 {
+          text-align: center;
+          font-size: 1.9rem;
+          margin: 0.5rem 0 3.5rem 0;
+        }
+        .btn-container {
+          button {
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            margin: 0.8em 0.8rem 0 0;
+          }
+
+          label {
+            font-size: 0.8rem;
+          }
+
+          input[type="range"]#Speed::-webkit-slider-thumb {
+            height: 56px;
+            width: 60px;
+            margin-top: -23px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar {
+    padding: 0.2rem;
+    i {
+      margin-top: 2.3rem;
+    }
+
+    .nav-container {
+      .nav-title {
+        h1 {
+          font-size: 2rem;
+        }
+        img {
+          height: 50px;
+          width: 55px;
+        }
+      }
+
+      .nav-option {
+        ul {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+@keyframes ExploreColor {
+  from {
+    transform: scale(0);
+    background-color: blueviolet;
+  }
+  to {
+    transform: scale(100%);
+    background-color: orchid;
+  }
+}
+
+@keyframes PathColor {
+  from {
+    transform: scale(0);
+    background-color: palegreen;
+  }
+  to {
+    transform: scale(100%);
+    background-color: cyan;
+  }
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 50%;
+  margin: 0 20px 40px 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  transform: rotate(180deg);
+  background: linear-gradient(to right, red 100%, red 100%);
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="text"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  border: none;
+  border-radius: 1.3px;
+}
+
+input[type="range"]#Speed::-webkit-slider-thumb {
+  border: none;
+  height: 66px;
+  width: 66px;
+  background: url("/Photos/thumb.png") no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -28px;
+  transform: rotate(180deg);
+}
+
+input[type="range"]focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/N-QUEEN/Queen.css" />
+    <script src="https://kit.fontawesome.com/43249bbc2d.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <i class="fa fa-bars menu-icon" onclick="toggleMenu()"></i>
+
+      <div class="nav-container">
+        <div class="nav-title">
+          <img src="/Photos/Queen_Icon.png" alt="" srcset="" />
+          <h1>.N-QUEEN</h1>
+        </div>
+
+        <ul></ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="nqueen">
+        <a href="/src/home/home.html"><i class="fa fa-arrow-left"></i></a>
+        <div id="board"></div>
+
+        <div class="btn-container">
+          <label for="Speed"
+            >Speed :
+            <input
+              type="range"
+              name="Speed"
+              id="Speed"
+              min="0"
+              max="1000"
+              value="500 " /></label
+          ><br />
+          <label for="Size"
+            >Size :
+            <input
+              type="range"
+              name="Size"
+              id="Size"
+              min="2"
+              max="8"
+              value="4" /><span id="N-label"></span
+          ></label>
+
+          <div class="btn">
+            <button id="Run-btn">Run</button>
+            <button id="Rst-btn">Reset</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/src/N-QUEEN/Queen.js"></script>
+  </body>
+</html>

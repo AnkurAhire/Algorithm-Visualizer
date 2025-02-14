@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/PathFinding/PathFinding.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/43249bbc2d.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <i class="fa fa-bars menu-icon" onclick="toggleMenu()"></i>
+
+      <div class="nav-container">
+        <div class="nav-title">
+          <img src="/Photos/PathIcon.png" alt="" srcset="" />
+          <h1>.PathFinding</h1>
+        </div>
+
+        <ul>
+          <li data-algo="BFS" onclick="HandleEvent(this.dataset.algo)">BFS</li>
+          <li data-algo="DFS" onclick="HandleEvent(this.dataset.algo)">DFS</li>
+          <li data-algo="ASTAR" onclick="HandleEvent(this.dataset.algo)">
+            ASTAR
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="PathFinder">
+        <a href="/src/home/home.html"><i class="fa fa-arrow-left"></i></a>
+
+        <div id="grid"></div>
+
+        <div class="btn-pannel">
+          <h1 id="algo-title">BFS &nbsp; PathFinder</h1>
+
+          <div class="btn-container">
+            <label for="Speed"
+              >Animation Speed :
+              <input
+                type="range"
+                id="Speed"
+                min="0"
+                max="200"
+                value="0" /></label
+            ><br />
+            <button id="Run-Btn" onclick="">Run</button>
+            <button id="Reset-btn">Reset</button>
+            <button id="Genearate-Wall">Wall</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/src/PathFinding/PathFiinding.js"></script>
+  </body>
+</html>

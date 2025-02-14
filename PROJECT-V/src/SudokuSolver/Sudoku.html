@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/SudokuSolver/Sudoku.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/43249bbc2d.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <img src="/Photos/Sudoku.png" alt="" srcset="" />
+        <h1>.SudokuSolver</h1>
+      </div>
+    </nav>
+
+    <main>
+      <div class="SudkoSolver">
+        <a href="/src/home/home.html"><i class="fa fa-arrow-left"></i></a>
+        <div id="board"></div>
+
+        <div class="btn-pannel">
+          <div class="btn-container">
+            <label for="Speed"
+              >Animation Speed :
+              <input
+                type="range"
+                name="Speed"
+                id="Speed"
+                min="0"
+                max="1000"
+                value="900 " /></label
+            ><br />
+            <p>Status : <span id="Status">None</span></p>
+            <br />
+            <button id="Run-btn" onclick="isValid()">Run</button>
+            <button id="Rst-btn">Reset</button>
+            <button id="Random">Random</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/src/SudokuSolver/Sudoku.js"></script>
+  </body>
+</html>
